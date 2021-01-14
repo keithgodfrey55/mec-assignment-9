@@ -7,6 +7,7 @@ import Work from "./pages/how_works";
 import Version from "./components/versions.js";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import VersionSearch from './pages/VersionSearch'
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -18,6 +19,9 @@ ReactDOM.render(
             </li>
             <li>
               <Link to="/components/versions.js">Versions</Link>
+            </li>
+            <li>
+              <Link to="/VersionsSearch">Version Search</Link>
             </li>
             <li>
               <Link to="/">Home</Link>
@@ -34,6 +38,7 @@ ReactDOM.render(
           <Route path="/components/versions.js" component={Button}>
             <Version />
           </Route>
+          <Route path="/VersionsSearch" component={VersionSearch} />
         </Switch>
       </div>
     </Router>
