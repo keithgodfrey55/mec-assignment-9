@@ -5,8 +5,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import versionSearch from "../validation/validate.js";
-import validPassword from "../validation/password.js"
-
+import validPassword from "../validation/password.js";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -36,19 +35,18 @@ class SignUp extends React.Component {
     password_value.password.error = validPassword(this.state.password.value);
     this.setState(password_value);
     if (password_value.password.error !== "") {
-        return password_value.password.error;
+      return password_value.password.error;
     }
     return;
   }
-  updateForm(which,event) {
+  updateForm(which, event) {
     this.setState({
-		[which]: {
-		    value: event.target.value,
-		    error: this.state[which].error
-		}
-	    });
-	
-}
+      [which]: {
+        value: event.target.value,
+        error: this.state[which].error,
+      },
+    });
+  }
   render() {
     return (
       <div>
@@ -77,7 +75,7 @@ class SignUp extends React.Component {
                     variant="outlined"
                     value={this.state.first.value}
                     onChange={(event) => {
-                      this.updateForm('first',event);
+                      this.updateForm("first", event);
                     }}
                   />
                 </Grid>
@@ -89,7 +87,7 @@ class SignUp extends React.Component {
                     variant="outlined"
                     value={this.state.last.value}
                     onChange={(event) => {
-                      this.updateForm('last',event);
+                      this.updateForm("last", event);
                     }}
                   />
                 </Grid>
@@ -101,7 +99,7 @@ class SignUp extends React.Component {
                     variant="outlined"
                     value={this.state.email.value}
                     onChange={(event) => {
-                      this.updateForm('email',event);
+                      this.updateForm("email", event);
                     }}
                   />
                 </Grid>
@@ -115,7 +113,7 @@ class SignUp extends React.Component {
                     value={this.state.password.value}
                     error={this.state.password.error}
                     onChange={(event) => {
-                      this.updateForm('password',event);
+                      this.updateForm("password", event);
                     }}
                   />
                 </Grid>
