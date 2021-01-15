@@ -5,8 +5,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import versionSearch from "../validation/validate.js";
-import validPassword from "../validation/password.js"
-
+import validPassword from "../validation/password.js";
+import validEmail from "../validation/email.js";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -32,12 +32,14 @@ class SignUp extends React.Component {
   }
   submitForm(event) {
     event.preventDefault();
-    let password_value = this.state;
-    password_value.password.error = validPassword(this.state.password.value);
-    this.setState(password_value);
-    if (password_value.password.error !== "") {
-        return password_value.password.error;
-    }
+    let state_value = this.state;
+    state_value.email.error = validEmail(this.state.email.value);
+    this.setState(state_value.email);
+    
+    
+    state_value.password.error = validPassword(this.state.password.value);
+    this.setState(state_value.password);
+    
     return;
   }
   updateForm(which,event) {
@@ -100,6 +102,7 @@ class SignUp extends React.Component {
                     placeholder="johnwick@gmail.com"
                     variant="outlined"
                     value={this.state.email.value}
+                    error={this.state.email.error}
                     onChange={(event) => {
                       this.updateForm('email',event);
                     }}
@@ -109,7 +112,7 @@ class SignUp extends React.Component {
                   <TextField
                     fullWidth
                     label="Password"
-                    helperText="Must be at least 8 characters"
+                    helperText={this.state.password.error}
                     variant="outlined"
                     type="password"
                     value={this.state.password.value}
