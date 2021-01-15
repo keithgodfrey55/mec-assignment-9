@@ -13,20 +13,27 @@ class VersionSearch extends React.Component {
         value: "",
         error: "",
       },
+      input2: {
+        value: "",
+        error: "",
+      }
     };
   }
   submitForm(event) {
     event.preventDefault();
     let state_value = this.state;
 
-    state_value.input.error = versionSearch(
-      state_value.input.value
-    );
+    state_value.input.error = versionSearch(state_value.input.value);
+
+    state_value.input2.error = versionSearch(state_value.input2.value);
 
     this.setState(state_value);
 
-    if (state_value.input.error !== "") {
+    if(state_value.input.error !== "") {
         return state_value.input.error;
+    }
+    if(state_value.input2.error !== "") {
+        return state_value.input2.error;
     }
     return;
   }
@@ -41,6 +48,7 @@ class VersionSearch extends React.Component {
       });
     }
   }
+  
   render() {
     return (
       <form
@@ -61,6 +69,20 @@ class VersionSearch extends React.Component {
                     helperText={this.state.input.error}
                     onChange={(event) => {
                       this.update_field("input", event);
+                    }}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    label="Intelliband version bytes"
+                    placeholder="Intelliband Version bytes"
+                    variant="outlined"
+                    value={this.state.input2.value}
+                    error={this.state.input2.error !== ""}
+                    helperText={this.state.input2.error}
+                    onChange={(event) => {
+                      this.update_field("input2", event);
                     }}
                     fullWidth
                   />

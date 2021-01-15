@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 class Version extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {item1: "Intelliband 0.5 15 GB", item2: "Intelliband 1.5 32 GB", item3: "Intelliband 2.0 64 GB"};      
+        this.state = {item1: "Intelliband 0.5 15 GB Gold", item2: "Intelliband 1.5 32 GB Silver", item3: "Intelliband 2.0 64 GB Bronze"};      
     }
     render() {
         return(

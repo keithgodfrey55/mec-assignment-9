@@ -8,6 +8,7 @@ import Version from "./components/versions.js";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import VersionSearch from './pages/VersionSearch'
+import {useStyles, CheckboxesGroup} from './pages/VersionSearch2';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -26,6 +27,9 @@ ReactDOM.render(
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/pages/VersionSearch2">Search Version Color</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -39,6 +43,9 @@ ReactDOM.render(
             <Version />
           </Route>
           <Route path="/VersionsSearch" component={VersionSearch} />
+          <Route path="/pages/VersionSearch2" component={Button}>
+            
+          </Route>
         </Switch>
       </div>
     </Router>
