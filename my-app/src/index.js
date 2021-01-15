@@ -4,6 +4,7 @@ import "./index.css";
 import Button from "@material-ui/core/Button";
 import App from "./pages/App";
 import Work from "./pages/how_works";
+import SignUp from "./pages/sign-up";
 import Version from "./components/versions.js";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -15,21 +16,32 @@ ReactDOM.render(
       <div>
         <nav>
           <ul>
+          <li>
+              <Button>
+              <Link to="/sign_up">Sign Up</Link>
+              </Button>
+            </li>
             <li>
+                <Button>
               <Link to="/pages/how_works">How Inteliband Works</Link>
+                </Button>
             </li>
             <li>
-              <Link to="/components/versions.js">Versions</Link>
+              <Button>
+              <Link to="/components/versions">Versions</Link>
+              </Button>
             </li>
             <li>
+            <Button>
               <Link to="/VersionsSearch">Version Search</Link>
+              </Button>
             </li>
             <li>
+              <Button>
               <Link to="/">Home</Link>
+              </Button>
             </li>
-            <li>
-              <Link to="/pages/VersionSearch2">Search Version Color</Link>
-            </li>
+            
           </ul>
         </nav>
         <Switch>
@@ -39,13 +51,11 @@ ReactDOM.render(
           <Route path="/pages/how_works" component={Button}>
             <Work />
           </Route>
-          <Route path="/components/versions.js" component={Button}>
+          <Route path="/components/versions" component={Button}>
             <Version />
           </Route>
           <Route path="/VersionsSearch" component={VersionSearch} />
-          <Route path="/pages/VersionSearch2" component={Button}>
-            
-          </Route>
+          <Route path="/sign_up" component={SignUp} />
         </Switch>
       </div>
     </Router>

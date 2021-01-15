@@ -10,5 +10,4 @@ function versionSearch(value){
     }
     return '';
 }
-
 export default versionSearch;
