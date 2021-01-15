@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import versionSearch from "../validation/validate";
+import { Typography } from "@material-ui/core";
 
 class VersionSearch extends React.Component {
   constructor(props) {
@@ -59,7 +60,8 @@ class VersionSearch extends React.Component {
         <div>       
             <Paper elevation={2}>
               <Grid container>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} align="center">
+                <Typography variant="h2">Search Intelliband by brand or Bytes</Typography>
                   <TextField
                     label="Intelliband version"
                     placeholder="Intelliband Version #"

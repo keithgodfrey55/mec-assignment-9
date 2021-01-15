@@ -10,7 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import VersionSearch from './pages/VersionSearch'
 import Feedback from "./components/feedback.js";
-import {useStyles, CheckboxesGroup} from './pages/VersionSearch2';
+import { CheckboxesGroup } from './pages/VersionSearch2';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -45,6 +45,11 @@ ReactDOM.render(
             </li>
             <li>
               <Button>
+                <Link to="/pages/VersionSearch2">Search Version Color</Link>
+              </Button>
+            </li>
+            <li>
+              <Button>
               <Link to="/">Home</Link>
               </Button>
             </li>
@@ -63,6 +68,7 @@ ReactDOM.render(
           <Route path="/VersionsSearch" component={VersionSearch} />
           <Route path="/sign_up" component={SignUp} />
           <Route path="/components/feedback" component={Feedback} />
+          <Route path="/pages/VersionSearch2" component={CheckboxesGroup} />
         </Switch>
       </div>
     </Router>
