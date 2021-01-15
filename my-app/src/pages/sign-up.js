@@ -7,6 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import versionSearch from "../validation/validate.js";
 import validPassword from "../validation/password.js";
 import validEmail from "../validation/email.js";
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -35,10 +36,15 @@ class SignUp extends React.Component {
     let state_value = this.state;
     state_value.email.error = validEmail(this.state.email.value);
     this.setState(state_value.email);
-    
-    
+
     state_value.password.error = validPassword(this.state.password.value);
     this.setState(state_value.password);
+
+    state_value.first.error = versionSearch(this.state.first.value);
+    this.setState(state_value.first);
+      
+    state_value.last.error = versionSearch(this.state.last.value);
+    this.setState(state_value.last);
     
     return;
   }
@@ -77,6 +83,7 @@ class SignUp extends React.Component {
                     placeholder="John"
                     variant="outlined"
                     value={this.state.first.value}
+                    error={this.state.first.error}
                     onChange={(event) => {
                       this.updateForm("first", event);
                     }}
@@ -89,6 +96,7 @@ class SignUp extends React.Component {
                     placeholder="Wick"
                     variant="outlined"
                     value={this.state.last.value}
+                    error={this.state.last.error}
                     onChange={(event) => {
                       this.updateForm("last", event);
                     }}
@@ -122,7 +130,7 @@ class SignUp extends React.Component {
                   />
                 </Grid>
                 <Grid item align="center" xs={12}>
-                  <Button variant="contained" color="primary" type="submit">
+                  <Button variant="contained" color="primary" type="submit" startIcon={<CloudUploadIcon />}>
                     SUBMIT
                   </Button>
                 </Grid>
