@@ -42,15 +42,14 @@ class SignUp extends React.Component {
     
     return;
   }
-  updateForm(which,event) {
+  updateForm(which, event) {
     this.setState({
-		[which]: {
-		    value: event.target.value,
-		    error: this.state[which].error
-		}
-	    });
-	
-}
+      [which]: {
+        value: event.target.value,
+        error: this.state[which].error,
+      },
+    });
+  }
   render() {
     return (
       <div>
@@ -79,7 +78,7 @@ class SignUp extends React.Component {
                     variant="outlined"
                     value={this.state.first.value}
                     onChange={(event) => {
-                      this.updateForm('first',event);
+                      this.updateForm("first", event);
                     }}
                   />
                 </Grid>
@@ -91,7 +90,7 @@ class SignUp extends React.Component {
                     variant="outlined"
                     value={this.state.last.value}
                     onChange={(event) => {
-                      this.updateForm('last',event);
+                      this.updateForm("last", event);
                     }}
                   />
                 </Grid>
@@ -104,7 +103,7 @@ class SignUp extends React.Component {
                     value={this.state.email.value}
                     error={this.state.email.error}
                     onChange={(event) => {
-                      this.updateForm('email',event);
+                      this.updateForm("email", event);
                     }}
                   />
                 </Grid>
@@ -118,7 +117,7 @@ class SignUp extends React.Component {
                     value={this.state.password.value}
                     error={this.state.password.error}
                     onChange={(event) => {
-                      this.updateForm('password',event);
+                      this.updateForm("password", event);
                     }}
                   />
                 </Grid>
